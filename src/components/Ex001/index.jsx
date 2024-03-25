@@ -79,6 +79,7 @@ const Ex001 = () => {
               name="estudo"
               value={estudo}
               onChange={handleEstudo}
+              placeholder="Ex: Medicina"
             />
           </label>
           <button>Enviar</button>

@@ -51,6 +51,7 @@ const Ex006 = () => {
               name="turista"
               value={turista}
               onChange={handleTurista}
+              placeholder="Ex: José"
             />
           </label>
           <button>Verificar</button>

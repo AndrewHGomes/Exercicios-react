@@ -69,6 +69,7 @@ const Ex007 = () => {
               name="usuario"
               value={usuario}
               onChange={handleUsuario}
+              placeholder="Ex: José"
             />
           </label>
           <label>

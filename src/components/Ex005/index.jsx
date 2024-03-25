@@ -80,6 +80,7 @@ const Ex005 = () => {
               name="atacante"
               value={atacante}
               onChange={handleAtacante}
+              placeholder="Ex: Arqueiro"
             />
           </label>
           <label>
@@ -98,6 +99,7 @@ const Ex005 = () => {
               name="defensor"
               value={defensor}
               onChange={handleDefensor}
+              placeholder="Ex: Mago"
             />
           </label>
           <label>
@@ -125,6 +127,7 @@ const Ex005 = () => {
               name="escudo"
               value={escudo}
               onChange={handleEscudo}
+              placeholder="Sim ou Não"
             />
           </label>
           <button>Jogar</button>

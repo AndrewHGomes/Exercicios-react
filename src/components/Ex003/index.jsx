@@ -63,7 +63,13 @@ const Ex003 = () => {
         <form onSubmit={handleSubmit}>
           <label>
             <span>Nome do 1º veículo:</span>
-            <input type="text" name="car1" value={car1} onChange={handleCar1} />
+            <input
+              type="text"
+              name="car1"
+              value={car1}
+              onChange={handleCar1}
+              placeholder="Ex: Ferrari"
+            />
           </label>
           <label>
             <span>Velocidade do 1º veículo:</span>
@@ -76,7 +82,13 @@ const Ex003 = () => {
           </label>
           <label>
             <span>Nome do 2º veículo:</span>
-            <input type="text" name="car2" value={car2} onChange={handleCar2} />
+            <input
+              type="text"
+              name="car2"
+              value={car2}
+              onChange={handleCar2}
+              placeholder="Ex: Mustang"
+            />
           </label>
           <label>
             <span>Velocidade do 2º veículo:</span>
