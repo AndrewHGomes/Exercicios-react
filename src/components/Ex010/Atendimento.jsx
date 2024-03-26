@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Atendimento = () => {
+const Atendimento = (props) => {
   const [paciente, setPaciente] = useState("");
 
   const handlePaciente = (e) => {
@@ -18,7 +18,7 @@ const Atendimento = () => {
           onChange={handlePaciente}
         />
       </label>
-      <button>Adicionar</button>
+      <button onClick={() => props.handleAdicionar(paciente)}>Adicionar</button>
     </>
   );
 };

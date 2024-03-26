@@ -49,7 +49,7 @@ const Ex008 = () => {
         {mostrar && (
           <div className="mostrar">
             <p>Esta é a tabuada do {numero}:</p>
-            <ul style={{ listStyle: "none" }}>
+            <ul>
               {tabuada.map((tab, index) => (
                 <li key={index}>
                   {numero} x {index + 1} = {tab}

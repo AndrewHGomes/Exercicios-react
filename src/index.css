@@ -64,6 +64,10 @@ button:hover {
   background-color: #123;
 }
 
+ul {
+  list-style: none;
+}
+
 .mostrar {
   padding: 0.5em;
   color: #345;
