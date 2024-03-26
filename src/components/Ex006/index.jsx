@@ -71,7 +71,7 @@ const Ex006 = () => {
             <p>Turista: {turista}</p>
             <p>Quantidade de cidades visitadas: {cidades.length}</p>
             <p>Cidades visitadas:</p>
-            <ul style={{ listStyle: "none" }}>
+            <ul>
               {cidades.map((cidade, index) => (
                 <li key={index}>{cidade}</li>
               ))}
