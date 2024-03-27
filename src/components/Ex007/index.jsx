@@ -46,7 +46,7 @@ const Ex007 = () => {
     setSair(true);
   };
 
-  const handlesubmit = (ev) => {
+  const handleSubmit = (ev) => {
     ev.preventDefault();
     setOpcoes(true);
   };
@@ -59,58 +59,47 @@ const Ex007 = () => {
 
   return (
     <section>
-      <h2>Controle Financeiro</h2>
-      <div className="box">
-        <form onSubmit={handlesubmit}>
-          <label>
-            <span>Nome do Usuário:</span>
-            <input
-              type="text"
-              name="usuario"
-              value={usuario}
-              onChange={handleUsuario}
-              placeholder="Ex: José"
-            />
-          </label>
-          <label>
-            <span>Saldo Disponível:</span>
-            <input
-              type="number"
-              name="saldo"
-              value={saldo}
-              onChange={handleSaldo}
-            />
-          </label>
-          <button>Iniciar</button>
-        </form>
+      <div className="container">
+        <h3>Controle Financeiro</h3>
+        <label>
+          <span>Nome do Usuário:</span>
+          <input
+            type="text"
+            name="usuario"
+            value={usuario}
+            onChange={handleUsuario}
+          />
+        </label>
+        <label>
+          <span>Saldo Disponível:</span>
+          <input
+            type="number"
+            name="saldo"
+            value={saldo}
+            onChange={handleSaldo}
+          />
+        </label>
+        <button onClick={handleSubmit}>Iniciar</button>
+      </div>
+      <div className="mostrar">
         {opcoes && (
-          <div className="mostrar">
-            <Opcoes
-              usuario={usuario}
-              saldo={saldo}
-              handleAbrirDepositar={handleAbrirDepositar}
-              handleAbrirSacar={handleAbrirSacar}
-              handleSair={handleSair}
-            />
-          </div>
+          <Opcoes
+            usuario={usuario}
+            saldo={saldo}
+            handleAbrirDepositar={handleAbrirDepositar}
+            handleAbrirSacar={handleAbrirSacar}
+            handleSair={handleSair}
+          />
         )}
-        {abrirDepositar && (
-          <div className="mostrar">
-            <Depositar handleDepositar={handleDepositar} />
-          </div>
-        )}
-        {abrirSacar && (
-          <div className="mostrar">
-            <Sacar handleSacar={handleSacar} />
-          </div>
-        )}
+        {abrirDepositar && <Depositar handleDepositar={handleDepositar} />}
+        {abrirSacar && <Sacar handleSacar={handleSacar} />}
         {sair && (
-          <div className="mostrar">
+          <>
             <p>Obrigado por escolher os nossos serviços.</p>
             <p>Seu saldo final é de R${Number(saldo).toFixed(2)}.</p>
             <p>Programa finalizado!</p>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

@@ -45,37 +45,37 @@ const Ex004 = () => {
 
   return (
     <section>
-      <h2>Conversor de Medidas</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Insira uma metragem para converter para outra medida:</span>
-            <input
-              type="number"
-              name="numero"
-              value={numero}
-              onChange={handleNumero}
-            />
-          </label>
-          <label>
-            <span>Escolha uma das medidas:</span>
-            <select name="medida" value={medida} onChange={handleMedida}>
-              <option value="mm">Milímetros</option>
-              <option value="cm">Centímetros</option>
-              <option value="dm">Decímetros</option>
-              <option value="dam">Decâmetros</option>
-              <option value="hm">Hectômetros</option>
-              <option value="km">Quilômetros</option>
-            </select>
-          </label>
-          <button>Converter</button>
-        </form>
+      <div className="container">
+        <h3>Conversor de Medidas</h3>
+        <label>
+          <span>Digite uma metragem para converter para outra medida:</span>
+          <input
+            type="number"
+            name="numero"
+            value={numero}
+            onChange={handleNumero}
+          />
+        </label>
+        <label>
+          <span>Escolha uma das medidas abaixo:</span>
+          <select name="medida" value={medida} onChange={handleMedida}>
+            <option value="mm">Milímetros</option>
+            <option value="cm">Centímetros</option>
+            <option value="dm">Decímetros</option>
+            <option value="dam">Decâmetros</option>
+            <option value="hm">Hectômetros</option>
+            <option value="km">Quilômetros</option>
+          </select>
+        </label>
+        <button onClick={handleSubmit}>Converter</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
-            <p>Você digitou {numero} metros.</p>
+          <>
+            <p>Você digitou {numero} metros...</p>
             {opcao()}
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

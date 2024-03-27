@@ -32,22 +32,23 @@ const Ex008 = () => {
 
   return (
     <section>
-      <h2>Robô da Tabuada</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Digite um número para vermos sua tabuada:</span>
-            <input
-              type="number"
-              name="numero"
-              value={numero}
-              onChange={handleNumero}
-            />
-          </label>
-          <button>Tabuada</button>
-        </form>
+      <div className="container">
+        <h3>Robô da Tabuada</h3>
+
+        <label>
+          <span>Digite um número para vermos sua tabuada:</span>
+          <input
+            type="number"
+            name="numero"
+            value={numero}
+            onChange={handleNumero}
+          />
+        </label>
+        <button onClick={handleSubmit}>Tabuada</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
+          <>
             <p>Esta é a tabuada do {numero}:</p>
             <ul>
               {tabuada.map((tab, index) => (
@@ -57,7 +58,7 @@ const Ex008 = () => {
               ))}
             </ul>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

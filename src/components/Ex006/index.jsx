@@ -41,33 +41,24 @@ const Ex006 = () => {
 
   return (
     <section>
-      <h2>Visitando Novas Cidades</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Olá, turista! Insira seu nome:</span>
-            <input
-              type="text"
-              name="turista"
-              value={turista}
-              onChange={handleTurista}
-              placeholder="Ex: José"
-            />
-          </label>
-          <button>Verificar</button>
-        </form>
-        {mostrarPerg && (
-          <div className="mostrar">
-            <Pergunta sim={handleClickSim} nao={handleClickNao} />
-          </div>
-        )}
-        {mostrarInput && (
-          <div className="mostrar">
-            <Cidade cidades={handleCidades} />
-          </div>
-        )}
+      <div className="container">
+        <h3>Visitando Novas Cidades</h3>
+        <label>
+          <span>Olá, turista! Insira seu nome:</span>
+          <input
+            type="text"
+            name="turista"
+            value={turista}
+            onChange={handleTurista}
+          />
+        </label>
+        <button onClick={handleSubmit}>Verificar</button>
+      </div>
+      <div className="mostrar">
+        {mostrarPerg && <Pergunta sim={handleClickSim} nao={handleClickNao} />}
+        {mostrarInput && <Cidade cidades={handleCidades} />}
         {mostrarResp && (
-          <div className="mostrar">
+          <>
             <p>Turista: {turista}</p>
             <p>Quantidade de cidades visitadas: {cidades.length}</p>
             <p>Cidades visitadas:</p>
@@ -77,7 +68,7 @@ const Ex006 = () => {
               ))}
             </ul>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

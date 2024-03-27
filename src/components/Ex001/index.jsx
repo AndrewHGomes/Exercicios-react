@@ -40,59 +40,51 @@ const Ex001 = () => {
 
   return (
     <section>
-      <h2>Cadastro de Usuário</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Nome:</span>
-            <input
-              type="text"
-              name="nome"
-              value={nome}
-              onChange={handleNome}
-              placeholder="Ex: José"
-            />
-          </label>
-          <label>
-            <span>Sobrenome:</span>
-            <input
-              type="text"
-              name="sobrenome"
-              value={sobrenome}
-              onChange={handleSobrenome}
-              placeholder="Ex: Silva"
-            />
-          </label>
-          <label>
-            <span>Ano de Nascimento:</span>
-            <input
-              type="number"
-              name="anoNasc"
-              value={anoNasc}
-              onChange={handleAnoNasc}
-            />
-          </label>
-          <label>
-            <span>Área de Estudo:</span>
-            <input
-              type="text"
-              name="estudo"
-              value={estudo}
-              onChange={handleEstudo}
-              placeholder="Ex: Medicina"
-            />
-          </label>
-          <button>Enviar</button>
-        </form>
+      <div className="container">
+        <h3>Cadastro de Usuário</h3>
+        <label>
+          <span>Insira seu nome:</span>
+          <input type="text" name="nome" value={nome} onChange={handleNome} />
+        </label>
+        <label>
+          <span>Insira seu sobrenome:</span>
+          <input
+            type="text"
+            name="sobrenome"
+            value={sobrenome}
+            onChange={handleSobrenome}
+          />
+        </label>
+        <label>
+          <span>Ano de Nascimento:</span>
+          <input
+            type="number"
+            name="anoNasc"
+            value={anoNasc}
+            onChange={handleAnoNasc}
+          />
+        </label>
+        <label>
+          <span>Área de Estudo:</span>
+          <input
+            type="text"
+            name="estudo"
+            value={estudo}
+            onChange={handleEstudo}
+          />
+        </label>
+        <button onClick={handleSubmit}>Enviar</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
+          <>
             <p>
               Olá, {nome} {sobrenome}!
             </p>
-            <p>Você tem {anoAtual - anoNasc} anos.</p>
+            <p>Você tem {anoAtual - anoNasc} anos de idade.</p>
             <p>Bem-vindo ao curso de {estudo}.</p>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>
