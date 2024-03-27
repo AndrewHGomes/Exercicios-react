@@ -58,54 +58,32 @@ const Ex003 = () => {
 
   return (
     <section>
-      <h2>Teste de Velocidade</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Nome do 1º veículo:</span>
-            <input
-              type="text"
-              name="car1"
-              value={car1}
-              onChange={handleCar1}
-              placeholder="Ex: Ferrari"
-            />
-          </label>
-          <label>
-            <span>Velocidade do 1º veículo:</span>
-            <input
-              type="number"
-              name="vel1"
-              value={vel1}
-              onChange={handleVel1}
-            />
-          </label>
-          <label>
-            <span>Nome do 2º veículo:</span>
-            <input
-              type="text"
-              name="car2"
-              value={car2}
-              onChange={handleCar2}
-              placeholder="Ex: Mustang"
-            />
-          </label>
-          <label>
-            <span>Velocidade do 2º veículo:</span>
-            <input
-              type="number"
-              name="vel2"
-              value={vel2}
-              onChange={handleVel2}
-            />
-          </label>
-          <button>Testar</button>
-        </form>
+      <div className="container">
+        <h3>Teste de Velocidade</h3>
+        <label>
+          <span>Insira o nome do 1º veículo:</span>
+          <input type="text" name="car1" value={car1} onChange={handleCar1} />
+        </label>
+        <label>
+          <span>Velocidade do 1º veículo:</span>
+          <input type="number" name="vel1" value={vel1} onChange={handleVel1} />
+        </label>
+        <label>
+          <span>Insira o nome do 2º veículo:</span>
+          <input type="text" name="car2" value={car2} onChange={handleCar2} />
+        </label>
+        <label>
+          <span>Velocidade do 2º veículo:</span>
+          <input type="number" name="vel2" value={vel2} onChange={handleVel2} />
+        </label>
+        <button onClick={handleSubmit}>Testar</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
+          <>
             {testar()}
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

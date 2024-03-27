@@ -28,28 +28,27 @@ const Ex009 = () => {
 
   return (
     <section>
-      <h2>Procurando Palíndromos</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Digite uma palavra para vermos se é um Palíndromo:</span>
-            <input
-              type="text"
-              name="palavra"
-              value={palavra}
-              onChange={handlePalavra}
-              placeholder="Ex: bola"
-            />
-          </label>
-          <button>Verificar</button>
-        </form>
+      <div className="container">
+        <h3>Procurando Palíndromos</h3>
+        <label>
+          <span>Digite uma palavra para vermos se é um Palíndromo:</span>
+          <input
+            type="text"
+            name="palavra"
+            value={palavra}
+            onChange={handlePalavra}
+          />
+        </label>
+        <button onClick={handleSubmit}>Verificar</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
-            <p>Você digitou: {palavra}</p>
+          <>
+            <p>Você digitou a palavra: {palavra}</p>
             <p>Palavra invertida: {invertida}</p>
-            <p>É um Palíndrmo? {palavra === invertida ? "SIM" : "Não"}</p>
+            <p>É um Palíndromo? {palavra === invertida ? "SIM" : "NÃO"}</p>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

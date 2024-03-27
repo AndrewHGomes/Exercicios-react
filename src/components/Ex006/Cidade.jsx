@@ -16,7 +16,6 @@ const Cidade = (props) => {
           name="cidade"
           value={cidade}
           onChange={handleCidade}
-          placeholder="Ex: Pirassununga"
         />
       </label>
       <button onClick={() => props.cidades(cidade)}>Salvar</button>

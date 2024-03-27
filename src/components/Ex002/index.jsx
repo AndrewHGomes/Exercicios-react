@@ -43,32 +43,23 @@ const Ex002 = () => {
 
   return (
     <section>
-      <h2>Calculadora Simples</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Insira o 1º número:</span>
-            <input
-              type="number"
-              name="num1"
-              value={num1}
-              onChange={handleNum1}
-            />
-          </label>
-          <label>
-            <span>Insira o 2º número:</span>
-            <input
-              type="number"
-              name="num2"
-              value={num2}
-              onChange={handleNum2}
-            />
-          </label>
-          <button>Calcular</button>
-        </form>
+      <div className="container">
+        <h3>Calculadora Simples</h3>
+        <label>
+          <span>Insira o 1º número:</span>
+          <input type="number" name="num1" value={num1} onChange={handleNum1} />
+        </label>
+        <label>
+          <span>Insira o 2º número:</span>
+          <input type="number" name="num2" value={num2} onChange={handleNum2} />
+        </label>
+        <button onClick={handleSubmit}>Calcular</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
+          <>
             <p>
+              {" "}
               SOMA: {num1} + {num2} = {soma(num1, num2)}
             </p>
             <p>
@@ -78,10 +69,10 @@ const Ex002 = () => {
               MULTIPLICAÇÃO: {num1} x {num2} = {mult(num1, num2)}
             </p>
             <p>
-              DIVISÃO: {num1} : {num2} = {div(num1, num2).toFixed(1)}
+              DIVISÃO: {num1} : {num2} = {div(num1, num2)}
             </p>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>

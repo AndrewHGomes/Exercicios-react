@@ -70,82 +70,71 @@ const Ex005 = () => {
 
   return (
     <section>
-      <h2>Cálculo de Dano</h2>
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Jogador atacante:</span>
-            <input
-              type="text"
-              name="atacante"
-              value={atacante}
-              onChange={handleAtacante}
-              placeholder="Ex: Arqueiro"
-            />
-          </label>
-          <label>
-            <span>Poder de ataque:</span>
-            <input
-              type="number"
-              name="ataque"
-              value={ataque}
-              onChange={handleAtaque}
-            />
-          </label>
-          <label>
-            <span>Jogador defensor:</span>
-            <input
-              type="text"
-              name="defensor"
-              value={defensor}
-              onChange={handleDefensor}
-              placeholder="Ex: Mago"
-            />
-          </label>
-          <label>
-            <span>Poder de defesa:</span>
-            <input
-              type="number"
-              name="defesa"
-              value={defesa}
-              onChange={handleDefesa}
-            />
-          </label>
-          <label>
-            <span>Pontos de vida:</span>
-            <input
-              type="number"
-              name="vida"
-              value={vida}
-              onChange={handleVida}
-            />
-          </label>
-          <label>
-            <span>Possui escudo:</span>
-            <input
-              type="text"
-              name="escudo"
-              value={escudo}
-              onChange={handleEscudo}
-              placeholder="Sim ou Não"
-            />
-          </label>
-          <button>Jogar</button>
-        </form>
+      <div className="container">
+        <h3>Cálculo de Dano</h3>
+        <label>
+          <span>Nome do jogador atacante:</span>
+          <input
+            type="text"
+            name="atacante"
+            value={atacante}
+            onChange={handleAtacante}
+          />
+        </label>
+        <label>
+          <span>Poder de ataque:</span>
+          <input
+            type="number"
+            name="ataque"
+            value={ataque}
+            onChange={handleAtaque}
+          />
+        </label>
+        <label>
+          <span>Nome do jogador defensor:</span>
+          <input
+            type="text"
+            name="defensor"
+            value={defensor}
+            onChange={handleDefensor}
+          />
+        </label>
+        <label>
+          <span>Poder de defesa:</span>
+          <input
+            type="number"
+            name="defesa"
+            value={defesa}
+            onChange={handleDefesa}
+          />
+        </label>
+        <label>
+          <span>Pontos de vida:</span>
+          <input type="number" name="vida" value={vida} onChange={handleVida} />
+        </label>
+        <label>
+          <span>Possui escudo?</span>
+          <input
+            type="text"
+            name="escudo"
+            value={escudo}
+            onChange={handleEscudo}
+          />
+        </label>
+        <button onClick={handleSubmit}>Jogar</button>
+      </div>
+      <div className="mostrar">
         {mostrar && (
-          <div className="mostrar">
-            <p>
-              Atacante: {atacante} - Ataque: {ataque} pontos.
-            </p>
-            <p>
-              Defensor: {defensor} - Defesa: {defesa} pontos.
-            </p>
-            <p>
-              Escudo: {escudo} - Vida: {vida} pontos.
-            </p>
-            <p>Foi causado {jogar()} pontos de dano aos pontos de vida.</p>
+          <>
+            <p>Jogador atacante: {atacante}.</p>
+            <p>Poder de ataque: {ataque} pontos.</p>
+            <p>Jogador defensor: {defensor}.</p>
+            <p>Poder de defesa: {defesa} pontos.</p>
+            <p>Pontos de vida: {vida} pontos.</p>
+            <p>Possui escudo? {escudo}.</p>
+            <p>Foi causado {jogar()} pontos de dano.</p>
             <button onClick={resetar}>Reset</button>
-          </div>
+          </>
         )}
       </div>
     </section>
