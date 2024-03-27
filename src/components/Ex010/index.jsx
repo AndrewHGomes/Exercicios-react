@@ -53,7 +53,7 @@ const Ex010 = () => {
                 <button onClick={() => setConsultar(false)}>OK</button>
               </div>
             )}
-            {pacientes.length ? (
+            {pacientes.length > 0 ? (
               <div>
                 <p>Esta é a fila de espera:</p>
                 <ul>

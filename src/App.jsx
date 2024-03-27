@@ -9,6 +9,7 @@ import Ex007 from "./components/Ex007";
 import Ex008 from "./components/Ex008";
 import Ex009 from "./components/Ex009";
 import Ex010 from "./components/Ex010";
+import Ex011 from "./components/Ex011";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Ex008 />
       <Ex009 />
       <Ex010 />
+      <Ex011 />
     </>
   );
 };

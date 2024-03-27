@@ -23,6 +23,7 @@ section {
 
 section h3 {
   color: red;
+  text-align: center;
 }
 
 .container {
@@ -43,6 +44,7 @@ select {
 
 ul {
   list-style: none;
+  text-align: center;
 }
 
 .mostrar {
