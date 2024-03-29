@@ -5,7 +5,6 @@ const Ex010 = () => {
   const [atendimento, setAtendimento] = useState(false);
   const [pacientes, setPacientes] = useState([]);
   const [pacienteConsultado, setPacienteConsultado] = useState("");
-  const [consultar, setConsultar] = useState(false);
   const [sair, setSair] = useState(false);
 
   const handleAtendimento = () => {
@@ -22,7 +21,6 @@ const Ex010 = () => {
     setPacientes((prevPacientes) =>
       prevPacientes.filter((paciente, index) => index !== 0)
     );
-    setConsultar(true);
   };
 
   const handleSair = () => {
@@ -47,13 +45,13 @@ const Ex010 = () => {
         {atendimento && <Atendimento handleAdicionar={handleAdicionar} />}
         {!atendimento && (
           <>
-            {consultar && (
+            {pacienteConsultado && (
               <div>
                 <p>O paciente {pacienteConsultado} foi consultado</p>
-                <button onClick={() => setConsultar(false)}>OK</button>
+                <button onClick={() => setPacienteConsultado("")}>OK</button>
               </div>
             )}
-            {pacientes.length > 0 ? (
+            {pacientes.length ? (
               <div>
                 <p>Esta é a fila de espera:</p>
                 <ul>

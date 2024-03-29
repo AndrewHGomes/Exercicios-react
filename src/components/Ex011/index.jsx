@@ -17,9 +17,9 @@ const Ex011 = () => {
   };
 
   const handlePuxarCarta = () => {
-    setCartaPuxada(baralho[0]);
+    setCartaPuxada(baralho[baralho.length - 1]);
     setBaralho((prevBaralho) =>
-      prevBaralho.filter((carta, index) => index !== 0)
+      prevBaralho.filter((carta, index) => index !== prevBaralho.length - 1)
     );
   };
 
@@ -48,11 +48,11 @@ const Ex011 = () => {
             {cartaPuxada && (
               <div>
                 <p>Você puxou a carta {cartaPuxada}</p>
-                <button onClick={() => setCartaPuxada(false)}>OK</button>
+                <button onClick={() => setCartaPuxada("")}>OK</button>
               </div>
             )}
             {baralho.length ? (
-              <p>Baralho contém {baralho.length} cartas.</p>
+              <p>Número de cartas no baralho: {baralho.length}.</p>
             ) : (
               <p>Não há cartas no baralho.</p>
             )}

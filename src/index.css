@@ -26,7 +26,8 @@ section h3 {
   text-align: center;
 }
 
-.container {
+.container,
+.mostrar {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -44,14 +45,6 @@ select {
 
 ul {
   list-style: none;
-  text-align: center;
-}
-
-.mostrar {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 button {
@@ -71,7 +64,7 @@ button:hover {
   background-color: transparent;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   section {
     flex-direction: column;
     align-items: center;
@@ -81,6 +74,5 @@ button:hover {
   .container,
   .mostrar {
     width: 80%;
-    gap: 0.5em;
   }
 }
