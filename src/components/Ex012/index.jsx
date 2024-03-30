@@ -30,6 +30,11 @@ const Ex012 = () => {
     }
   };
 
+  const handleEncerrar = () => {
+    setEncerrar(true);
+    setImoveis([]);
+  };
+
   return (
     <section>
       <div className="container">
@@ -38,7 +43,7 @@ const Ex012 = () => {
         <p>Escolha uma das opções abaixo:</p>
         <button onClick={handleCadastrar}>Cadastrar Imóvel</button>
         <button onClick={handleCadastrados}>Imóveis Cadastrados</button>
-        <button onClick={() => setEncerrar(true)}>Encerrar</button>
+        <button onClick={handleEncerrar}>Encerrar</button>
       </div>
       <div className="mostrar">
         {cadastrar && <Cadastrar handleImoveis={handleImoveis} />}
